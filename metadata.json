@@ -1,0 +1,6 @@
+{
+  "name": "UCMAS Mental Arithmetic Studio",
+  "description": "UCMAS-inspired mental arithmetic training studio featuring Blitz visual flash calculation and Listening audio calculation modes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

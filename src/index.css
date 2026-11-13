@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ucmas-blue: #0054A6;
+  --color-ucmas-blue-hover: #004482;
+  --color-ucmas-light-blue: #EFF6FF;
+  --color-ucmas-text: #1E293B;
+  --color-ucmas-muted: #64748B;
+  --color-ucmas-border: #E2E8F0;
+  --color-ucmas-success: #00A651;
+  --color-ucmas-error: #E31E24;
+  --color-ucmas-highlight: #FFF200;
+}
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FFFFFF;
+    color: #1E293B;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    color: #1E293B;
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-sans);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-flash-numeral {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums slotted-zero;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Custom Range Slider in UCMAS Blue (#0054A6) */
+input[type="range"].ucmas-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #E2E8F0;
+  height: 6px;
+  border-radius: 9999px;
+  outline: none;
+}
+
+input[type="range"].ucmas-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #0054A6;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 84, 166, 0.35);
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+input[type="range"].ucmas-slider::-webkit-slider-thumb:hover {
+  background: #004482;
+  transform: scale(1.06);
+}
+
+input[type="range"].ucmas-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #0054A6;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 84, 166, 0.35);
+  cursor: pointer;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+input[type="range"].ucmas-slider::-moz-range-thumb:hover {
+  background: #004482;
+  transform: scale(1.06);
+}
+
+@keyframes flashIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-flash-in {
+  animation: flashIn 100ms ease-out forwards;
+}
